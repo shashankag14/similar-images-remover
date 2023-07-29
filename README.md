@@ -37,6 +37,8 @@ Replace `"/path/to/dataset_folder"` with the path to the folder containing your 
 | `--frame_change_thresh`      | Threshold to convert grayscale images into binary.                                           | 25              |
 | `--resize_shape`      | Size to reshape the images.                                           | (200,200)              |
 
+## Output
+The script will save the detected similar images along with their similarity scores to a text file for further analysis. The similar images will be removed from the dataset folder and the removed images will be moved to the `removed_images` directory.
 
 ## Features
 
