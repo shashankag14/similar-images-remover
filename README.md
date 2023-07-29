@@ -1,4 +1,4 @@
-# Image Deduplication
+# Similar Images Remover Tool
 
 ## Description
 
