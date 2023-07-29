@@ -4,7 +4,7 @@
 
 This program is designed to find and remove similar-looking images in a folder containing a dataset of images collected from cameras. The goal is to optimize the dataset by removing duplicated or almost duplicated images that have minor differences and are considered non-essential for data collection and object recognition tasks.
 
-The program uses provided functions for image comparison from `imaging_interview.py` to assess the similarity between images. Specifically, it leverages the `preprocess_image_change_detection` function to preprocess the images and the `compare_frames_change_detection` function to compute a similarity score between a pair of images.
+The program uses provided functions for image comparison from `imaging.py` to assess the similarity between images. Specifically, it leverages the `preprocess_image_change_detection` function to preprocess the images and the `compare_frames_change_detection` function to compute a similarity score between a pair of images.
 
 [comment]: <> (## Subsample Dataset)
 
@@ -20,7 +20,7 @@ To run the program, follow these steps:
 
 ## Usage
 
-1. Unzip the provided subsample dataset (`dataset-candidates-ml.zip`) into a folder.
+1. Unzip your dataset (Eg. `dataset.zip`) into a folder.
 2. Execute the program by running the following command in the terminal:
 
 ```python similar_images_remover.py --folder_path "/path/to/dataset_folder"```
@@ -30,10 +30,12 @@ Replace `"/path/to/dataset_folder"` with the path to the folder containing your 
 ## Hyperparameters
 | Hyperparameter               | Description                                                                                   | Default Value   |
 |------------------------------|-----------------------------------------------------------------------------------------------|-----------------|
-| `--threshold`                | Adjusts the similarity threshold for image removal. (Lower values result in stricter removal.) | 0.9             |
-| `--min_contour_area`         | Minimum contour area for image comparison. (Lower values result in stricter removal.)        | 4000            |
-| `--gaussian_blur_radius`     | A list of Gaussian blur radii for image preprocessing to remove high frequency features.                                      | [15]            |
-| `--black_mask`               | Percentage values (left, top, right, bottom) for the black mask applied to image borders.    | (0, 0, 5, 0)    |
+| `--threshold`                | Adjusts the similarity threshold for image removal. (Lower values result in stricter removal.) | 0.85             |
+| `--min_contour_area`         | Minimum contour area for image comparison. (Lower values result in stricter removal.)        | 500               |
+| `--gaussian_blur_radius`     | A list of Gaussian blur radii for image preprocessing to remove high frequency features.     | ["None"]            |
+| `--black_mask`               | Percentage values (left, top, right, bottom) for the black mask applied to image borders.    | (0, 15, 0, 0)    |
+| `--frame_change_thresh`      | Threshold to convert grayscale images into binary.                                           | 25              |
+| `--resize_shape`      | Size to reshape the images.                                           | (200,200)              |
 
 
 ## Features

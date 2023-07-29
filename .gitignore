@@ -1,0 +1,6 @@
+*.png
+*.zip
+*.txt
+
+.vscode/
+.DS_Store
